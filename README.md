@@ -24,3 +24,15 @@
 - Push the updated feature branch + master changes
 - `git push origin`
 - Merge the pull request as it will now have no conflicts with the master branch
+
+# Deployments
+
+- Master should always be deployable and deployed
+- Dont merge to master unless it is ready for prod, do your testing before this step
+- Deploy a pull request to a staging server and test there first
+- If you want to group several pull requets together for deployment, test each individually on staging;
+- Then create a branch and merge each of the pull requests into that integration branch and deploy it to staging
+- Do your testing
+- If everything is happy, merge the pull requests to master, deploy
+- By testing each one seperately if there is a failure you can easily roll back and you know what PR fucked it up.
+- If you try to jam a bunch of stuff through the pipeline and it breaks, rolling back is harder and yu have to dig to find out which moving part (pr) broke.
