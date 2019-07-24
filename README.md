@@ -1,3 +1,26 @@
-# this is the readme
+# Git workflow
 
-- added some note here
+- Check out local master
+- `git fetch` will give us access to changes on the origin
+- `git reset --hard` will reset local master to kmatch origin master
+- `git checkout -b feature-branch-name` will give us a new branch based on master
+- Make whatever changes the feature required
+- Check in the feature branch with `git add <files that changed>`
+- Commit changes - `git commit -m'some good commit message'`
+- Push feature branch to origin - `git push origin`
+- Create pull request for our feature on origin
+- Before we merge our pull request, lets make sure master has not been updated by someone else or us
+- `git checkout master`
+- `git fetch origin`
+- If origin master has changed, point our local master to the same commit
+-`git reset --hard origin/master`
+- Update our feature branch with the changes to master
+- `git checkout <feature-branch-name>`
+- Rebase master to our branch
+- `git rebase master`
+- If the rebase can't be applied cleanly, make the correct edits
+- `git add <file name>
+- `git rebase --continue` until the rebase is applied
+- Push the updated feature branch + master changes
+- `git push origin`
+- Merge the pull request as it will now have no conflicts with the master branch
